@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в аккаунт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Заголовок как в первом примере */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        header .login-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        header .login-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Контейнер для входа */
+        .login-container {
+            background-color: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Усиленная тень */
+            width: 300px;
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .login-container input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .login-container label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2E8B57; /* Более темный зеленый */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #276749; /* Еще темнее при наведении */
+        }
+
+        .login-container .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+            text-decoration: none;
+        }
+
+        .login-container .forgot-password:hover {
+            text-decoration: underline;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Заголовок как в первом примере -->
+    <header>
+        <div class="logo">Steam</div>
+        <nav>
+            <a href="#">Магазин</a>
+            <a href="#">Сообщества</a>
+            <a href="#">Информация</a>
+            <a href="#">Поддержка</a>
+        </nav>
+        <button class="login-button">Войти</button>
+    </header>
+
+    <!-- Контейнер для входа -->
+    <div class="login-container">
+        <h2>Вход в аккаунт</h2>
+        <input type="text" placeholder="Имя аккаунта" required>
+        <input type="password" placeholder="Пароль" required>
+        <label>
+            <input type="checkbox"> Запомнить меня
+        </label>
+        <button type="submit">Войти</button>
+        <a href="#" class="forgot-password">Забыли пароль?</a>
+    </div>
+
+</body>
+</html>
