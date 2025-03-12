@@ -126,29 +126,31 @@
 </head>
 <body>
 
-    <!-- Заголовок как в первом примере -->
-    <header>
-        <div class="logo">Steam</div>
-        <nav>
-            <a href="#">Магазин</a>
-            <a href="#">Сообщества</a>
-            <a href="#">Информация</a>
-            <a href="#">Поддержка</a>
-        </nav>
-        <button class="login-button">Войти</button>
-    </header>
+<!-- Заголовок как в первом примере -->
+<header>
+    <div class="logo">Steam</div>
+    <nav>
+        <a href="#">Магазин</a>
+        <a href="#">Сообщества</a>
+        <a href="#">Информация</a>
+        <a href="#">Поддержка</a>
+    </nav>
+    <button class="login-button">Войти</button>
+</header>
 
-    <!-- Контейнер для входа -->
-    <div class="login-container">
-        <h2>Вход в аккаунт</h2>
-        <input type="text" placeholder="Имя аккаунта" required>
-        <input type="password" placeholder="Пароль" required>
+<!-- Контейнер для входа -->
+<div class="login-container">
+    <h2>Вход в аккаунт</h2>
+    <form action="/enter" method="post" enctype="application/x-www-form-urlencoded">
+        <input name="name" type="text" placeholder="Имя аккаунта" required>
+        <input name="password" type="password" placeholder="Пароль" required>
         <label>
             <input type="checkbox"> Запомнить меня
         </label>
         <button type="submit">Войти</button>
-        <a href="#" class="forgot-password">Забыли пароль?</a>
-    </div>
+    </form>
+    <a href="#" class="forgot-password">Забыли пароль?</a>
+</div>
 
 </body>
 </html>
