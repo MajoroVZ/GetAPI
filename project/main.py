@@ -1,3 +1,5 @@
+from webbrowser import open_new
+
 from fastapi import FastAPI, Form, Request, Depends
 from fastapi.responses import HTMLResponse
 from sqlalchemy.orm import Session
@@ -32,15 +34,24 @@ async def get_login_page2():
         return HTMLResponse(content=file.read())
 
 
+# @app.post("/enter", response_model=DBUser)
+# async def login(name: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)) -> DBUser:
+#     user_data = UserBase(name=name, password=password)
+#     db_user = User(name=user_data.name, password=user_data.password)
+#     db.add(db_user)
+#     db.commit()
+#     db.refresh(db_user)
+#     return db_user
+
 @app.post("/enter", response_model=DBUser)
-async def login(name: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)) -> DBUser:
+async def login(name: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)):
     user_data = UserBase(name=name, password=password)
     db_user = User(name=user_data.name, password=user_data.password)
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
-    return db_user
-
+    with open("main.html", "r", encoding="utf-8") as file:
+        return HTMLResponse(content=file.read())
 
 @app.get("/enter/", response_model=List[DBUser])
 async def posts(db: Session = Depends(get_db)):
